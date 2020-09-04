@@ -7,12 +7,13 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
   "author": "Mikko Kemppi",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.8.1",
+    "jest": "^26.4.2",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
@@ -22,5 +23,8 @@
     "mongoose": "^5.10.2",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
