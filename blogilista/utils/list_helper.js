@@ -1,3 +1,5 @@
+var _ = require('lodash')
+
 const dummy = (blogs) => {
   return 1
 }
@@ -13,6 +15,24 @@ const favoriteBlog = (blogs) => {
   return blogs.find((b) => b.likes === bestBlog)
 }
 
+const mostBlogs = (blogs) => {
+
+  const grouped = _.map(
+    _.countBy(blogs, 'author'), (val, key) => (
+      { author: key, blogs: val }
+    )
+  )
+
+  const mostBlog = grouped.reduce((most, b) => {
+    //console.log('tykkääjät',b.likes,best)
+    return (b.blogs > most) ? b.blogs : most
+  },0)
+
+  return grouped.find((b) => b.blogs === mostBlog)
+
+}
+
+
 module.exports = {
-  dummy, totalLikes, favoriteBlog
+  dummy, totalLikes, favoriteBlog, mostBlogs
 }

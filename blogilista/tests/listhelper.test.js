@@ -65,8 +65,8 @@ describe('total likes', () => {
   })
 })
 
-describe('favorite blog is', () => {
-  test('favorite blog is', () => {
+describe('favorite blog', () => {
+  test('Favorite blog', () => {
     const result = listHelper.favoriteBlog(blogs)
     expect(result).toEqual(
       {
@@ -76,6 +76,18 @@ describe('favorite blog is', () => {
         url: 'http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html',
         likes: 12,
         __v: 0
+      }
+    )
+  })
+})
+
+describe('Most blogs', () => {
+  test('Most blogs ', () => {
+    const result = listHelper.mostBlogs(blogs)
+    expect(result).toEqual(
+      {
+        author: 'Robert C. Martin',
+        blogs: 3
       }
     )
   })
